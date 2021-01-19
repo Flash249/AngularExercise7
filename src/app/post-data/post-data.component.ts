@@ -1,5 +1,5 @@
 import { GetProductDataService } from './../get-product-data.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post-data',
@@ -19,28 +19,39 @@ export class PostDataComponent implements OnInit {
       });
   }
 
-  createPost(input: HTMLInputElement) {
-    //console.log("hi");
-    let post = { id: input.value };
-    input.value = '';
+  // createPost(input: HTMLInputElement) {
+  //   //console.log("hi");
+  //   let post = { id: input.value };
+  //   input.value = '';
 
-      this.service.createPost(post).subscribe(
-        (response : any) => {
-          post['id'] = response.id;
+  //     this.service.createPost(post).subscribe(
+  //       (response : any) => {
+  //         post['id'] = response.id;
 
-          this.posts.splice(0, 0, post);
-          console.log(response);
-      })
+  //         this.posts.splice(0, 0, post);
+  //         console.log(response);
+  //     })
+  // }
+
+  deletePost(productName: string,productCode: string,branchName: string,branchCode: string,shippingAddress: string){
+    console.log("Deleting Product");
+    this.msg= 'Product deleted is :\n'+'Product Name: ' + productName +
+                    '\nProduct Code: ' +productCode +
+                    '\nBranch Name: ' + branchName +
+                    '\nBranch Code: ' +branchCode +
+                    '\nShipping Address: ' +shippingAddress;
+    console.log(this.msg);
   }
 
-deletePost(productName: string,productCode: string,branchName: string,branchCode: string,shippingAddress: string){
-  console.log("Deleting Product");
-  this.msg= 'Product deleted is :\n'+'Product Name: ' + productName +
-                  '\nProduct Code: ' +productCode +
-                  '\nBranch Name: ' + branchName +
-                  '\nBranch Code: ' +branchCode +
-                  '\nShipping Address: ' +shippingAddress;
-  console.log(this.msg);
-}
+  @Output() updateProduct = new EventEmitter<object>()
+  updatePost(productName: any,productCode: any,branchName: any,branchCode: any,shippingAddress: any){
+    this.updateProduct.emit(
+      {'productName' : productName,
+      'productCode' : productCode,
+      'branchName' : branchName,
+      'branchCode' : branchCode,
+      'shippingAddress' : shippingAddress
+    });
+  }
 
 }

@@ -1,0 +1,16 @@
+<app-post-data (updateProduct)="updateData($event)"></app-post-data>
+<h1>Update Data</h1>
+<form id="productform">
+    <label> Product Name:</label>
+    <input type="text" name="productName" value= {{ProductNames}}/>    <br/><br/>
+    <label>Product Code: </label>
+    <input type="text" name="productCode" value= {{ProductCode}}/>    <br/><br/>
+    <label> Branch Name: </label>
+    <input type="text" name="branchName" value= {{BranchName}}/>    <br/><br/>
+    <label>Branch Code:</label>
+    <input type="text" name="branchCode" value= {{BranchCode}}/>    <br/><br/>
+    <label>Shipping Address:</label>
+    <input type="text" name="shippingAddress" value= {{ShippingAddress}}/>    <br/><br/>
+    <button type="submit" (click)="updatePost()">&nbsp;Update</button>
+    <br>
+</form><br>

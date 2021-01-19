@@ -1,0 +1,37 @@
+[
+  {
+  "productName" : "Google",
+  "productCode" : 1001,
+  "branchName" : "Technology",
+  "branchCode" : 501,
+  "shippingAddress" : "Los Angeles"
+  },
+  {
+  "productName" : "Facebook",
+  "productCode" : 1010,
+  "branchName" : "Technology",
+  "branchCode" : 504,
+  "shippingAddress" : "San Francisco"
+  },
+  {
+  "productName" : "Reuters",
+  "productCode" : 1100,
+  "branchName" : "News",
+  "branchCode" : 509,
+  "shippingAddress" : "New York"
+  },
+  {
+    "productName" : "Samsung",
+    "productCode" : 1011,
+    "branchName" : "Electronics",
+    "branchCode" : 541,
+    "shippingAddress" : "South Korea"
+  },
+  {
+    "productName" : "Nike",
+    "productCode" : 1101,
+    "branchName" : "Sports",
+    "branchCode" : 702,
+    "shippingAddress" : "Los Angeles"
+  }
+]

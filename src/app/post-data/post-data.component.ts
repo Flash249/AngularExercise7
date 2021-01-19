@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostDataComponent implements OnInit {
   posts: any;
+  msg!: string;
   constructor(private service: GetProductDataService) { }
 
   ngOnInit(): void {
@@ -31,5 +32,15 @@ export class PostDataComponent implements OnInit {
           console.log(response);
       })
   }
+
+deletePost(productName: string,productCode: string,branchName: string,branchCode: string,shippingAddress: string){
+  console.log("Deleting Product");
+  this.msg= 'Product deleted is :\n'+'Product Name: ' + productName +
+                  '\nProduct Code: ' +productCode +
+                  '\nBranch Name: ' + branchName +
+                  '\nBranch Code: ' +branchCode +
+                  '\nShipping Address: ' +shippingAddress;
+  console.log(this.msg);
+}
 
 }

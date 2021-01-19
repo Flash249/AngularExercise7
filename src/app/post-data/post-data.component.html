@@ -16,10 +16,10 @@
           <td>{{post.shippingAddress}}</td>
          <!-- <td><button -->
           <!-- (click)="updatePost(post)"
-          class="btn btn-default btn-sm">Update</button></td>
+          class="btn btn-default btn-sm">Update</button></td>-->
           <td><button
-              (click)="deletePost(post)"
-              class="btn btn-danger btn-sm pull-right">Delete</button></td> -->
+              (click)="deletePost(post.productName,post.productCode,post.branchName,post.branchCode,post.shippingAddress)"
+              class="btn btn-danger btn-sm pull-right">Delete</button></td>
       </tr>
 
   </table>

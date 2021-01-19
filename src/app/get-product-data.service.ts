@@ -28,8 +28,8 @@ addProduct(post : any) {​​
 //  return this.http.patch(this.url + '/' + post.id, JSON.stringify({ isRead: true }))
 // }
 
-// deletePost(id) {
-//  return this.http.delete(this.url + '/' + id);
-// }
-// }
+deletePost(id: any) {
+ return this.http.delete(this.jsonPath + '/' + id);
 }
+}
+
